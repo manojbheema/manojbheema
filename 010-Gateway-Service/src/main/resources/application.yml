@@ -1,0 +1,23 @@
+info:
+  component: Edge Server
+  
+
+zuul:
+  routes:
+    account:
+ 
+      path: /account/**
+      serviceId: account-service   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: false
+      
+server:
+  port: 8765
+
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
