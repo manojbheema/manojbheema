@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: 002-RestTemplateClient
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.ameya
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/002-RestTemplateClient
+Created-By: Maven Integration for Eclipse
+
