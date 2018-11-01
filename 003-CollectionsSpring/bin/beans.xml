@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="personBean" class="com.ameya.pojos.Person">
+		<property name="name" value="Ameya" />
+		<property name="address" value="Pune" />
+		<property name="age" value="42" />
+	</bean>
+	<bean id="customerBean" class="com.ameya.pojos.Customer">
+
+		<!-- java.util.List -->
+		<property name="lists">
+			<list>
+				<ref bean="personBean" />
+				<bean class="com.ameya.pojos.Person">
+					<property name="name" value="Amol LIST" />
+					<property name="address" value="Pune LIST" />
+					<property name="age" value="38" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- java.util.Set -->
+		<property name="sets">
+			<set>
+				<ref bean="personBean" />
+				<bean class="com.ameya.pojos.Person">
+					<property name="name" value="Amol SET" />
+					<property name="address" value="Pune SET" />
+					<property name="age" value="39" />
+				</bean>
+			</set>
+		</property>
+
+		<!-- java.util.Map -->
+		<property name="maps">
+			<map>
+				<entry key="Key 1" value-ref="personBean" />
+				<entry key="Key 2">
+					<bean class="com.ameya.pojos.Person">
+						<property name="name" value="Amol MAP" />
+						<property name="address" value="Pune MAP" />
+						<property name="age" value="41" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+		<!-- java.util.Properties -->
+		<property name="pros">
+			<props>
+				<prop key="admin">admin@nospam.com</prop>
+				<prop key="support">support@nospam.com</prop>
+			</props>
+		</property>
+
+	</bean>
+
+
+
+</beans>

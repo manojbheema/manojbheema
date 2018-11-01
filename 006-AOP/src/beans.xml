@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- <aop:config>
+		<aop:aspect id="log" ref="logging">
+		
+		<aop:pointcut 
+		expression="execution(* com.ameya.models.*.*(..))" 
+		id="allMethodsPointcut"/>
+		
+		<aop:before method="beforeAdvice" pointcut-ref="allMethodsPointcut"/>
+		
+		<aop:after method="afterAdvice" pointcut-ref="allMethodsPointcut"/>
+		
+		<aop:after-returning method="afterReturningAdvice" 
+		returning="retVal" pointcut-ref="allMethodsPointcut"/>
+		
+		<aop:after-throwing method="afterThrowingAdvice" 
+		throwing="ex" pointcut-ref="allMethodsPointcut"/>
+		
+		<aop:around method="aroundAdvice" pointcut-ref="allMethodsPointcut"/>
+		
+		</aop:aspect>
+	
+	</aop:config> -->
+
+<!-- 	<bean id="logging" class="com.ameya.aop.Logging"/> -->
+	<aop:aspectj-autoproxy/>
+	<bean id="logging" class="com.ameya.aop.LoggingAspectJ"/>
+	<bean id="employee" class="com.ameya.models.Employee">
+		<property name="age" value="42"/>
+		<property name="firstName" value="Ameya"/>
+		<property name="lastName" value="Joshi"/>
+		<property name="salary" value="45000"/>
+	</bean>
+</beans>
+
+<!-- 
+	execution(* com.ameya.models.Employee.getName(..)
+ -->
